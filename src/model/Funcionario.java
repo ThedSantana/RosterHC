@@ -1,19 +1,20 @@
-package negocio;
+package model;
 
 public class Funcionario {
 	public int codigo;
 	public String nome;
-	public Character sexo;
+	public Character sexo; //F feminino M masculino
 	public String cpf;
 	public String endereco;
 	public String cep;
+	public String email;
 	public String telefone;
 	public String celular;
 	public String funcao;
 	
 	public Funcionario(int codigo, String nome, Character sexo, String cpf,
-			String endereco, String cep, String telefone, String celular,
-			String funcao) {
+			String endereco, String cep, String email, String telefone, 
+			String celular, String funcao) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
@@ -21,6 +22,7 @@ public class Funcionario {
 		this.cpf = cpf;
 		this.endereco = endereco;
 		this.cep = cep;
+		this.email = email;
 		this.telefone = telefone;
 		this.celular = celular;
 		this.funcao = funcao;
@@ -74,6 +76,14 @@ public class Funcionario {
 		this.cep = cep;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getTelefone() {
 		return telefone;
 	}
@@ -97,5 +107,7 @@ public class Funcionario {
 	public void setFuncao(String funcao) {
 		this.funcao = funcao;
 	}
+	
+		
 	
 }
