@@ -1,5 +1,5 @@
 
-package negocio;
+package model;
 
 //import java.util.ArrayList;
 //import java.util.Arrays;
@@ -10,21 +10,19 @@ package negocio;
 public class Perfil {
 
 	public int codigo;
+	public boolean ativo; //declara como 'False'
 	public String email;
 	public String senha;
 	public String usuario;
-	//"S" ou "N" para marcar disponibilidade e "T" ou "F" para confirmacao
-	public char [][][] turnoDia = new char[4][3][7]; //cada semana (total 4)
-												//coluna: manha, tarde e noite
-												//linha: dom,seg,ter,qua,qui,sex,sab
-	public Perfil(int codigo,String email, String senha, String usuario,
-			char[][][] turnoDia) {
+	
+	public Perfil(int codigo,boolean ativo, String email, String senha, String usuario) {
 		super();
 		this.codigo = codigo;
+		this.ativo = ativo;
 		this.email = email;
 		this.senha = senha;
 		this.usuario = usuario;
-		this.turnoDia = turnoDia;
+		
 	}
 	
 	public int getCodigo() {
@@ -33,6 +31,14 @@ public class Perfil {
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -51,13 +57,5 @@ public class Perfil {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-	public char[][][] getTurnoDia() {
-		return turnoDia;
-	}
-	public void setTurnoDia(char[][][] turnoDia) {
-		this.turnoDia = turnoDia;
-	}
 	
-
-
 }
