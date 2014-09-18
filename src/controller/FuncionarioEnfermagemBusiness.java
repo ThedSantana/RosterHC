@@ -94,6 +94,8 @@ String [] turno = new String[3];
 		Scanner scanner = new Scanner(System.in);
 		List<FuncionarioEnfermagem> funcsEnf = bd.getFuncionariosEnf();
 		char [][]horarios = new char[3][7];
+		String [] diaM = new String[7];
+		String [] turnoM = new String[3];
 		
 		for (int h = 0; h < funcsEnf.size(); h++) {
 			if (funcsEnf.get(h).getCpf().equals(cpf)){
@@ -101,11 +103,12 @@ String [] turno = new String[3];
 			System.out.println("Informe a sua disponibilidade: S - sim ou N - nao");
 			System.out.println("Caso queira encerrar, digite E ");
 			System.out.println("###########################################");
-			
+			diaM = TabelaDia();
+			turnoM = TabelaTurno();
 			for (int i = 0; i < 7; i++) {
 				for (int j = 0; j < 3; j++) {
-					System.out.println("Tem disponibilidade de trabalhar " + dia[i] +
-							" pela " + turno[j] + "?");
+					System.out.println("Tem disponibilidade de trabalhar " + diaM[i] +
+							" pela " + turnoM[j] + "?");
 					char resp = scanner.next().charAt(0);
 					if (resp == 's' || resp == 'n'){
 						horarios[j][i] = resp;
@@ -122,13 +125,16 @@ String [] turno = new String[3];
 		return false;
 	}
 
-	public void Tabela(){
+	public String[] TabelaTurno(){
 			
 		//turnos
 		turno[0] = "manha";
 		turno[1] = "tarde";
 		turno[2] = "noite";
 		
+		return turno;
+	}
+	public String[] TabelaDia(){	
 		//dias da semana
 		dia[0] = "Domingo";
 		dia[1] = "Segunda";
@@ -138,26 +144,40 @@ String [] turno = new String[3];
 		dia[5] = "Sexta";
 		dia[6] = "Sabado";
 		
+		return dia;
+		
 	}
 	
 	public void ListaHorario(String cpf){
 		List<FuncionarioEnfermagem> funcsEnf = bd.getFuncionariosEnf();
 		char [][]horarios = new char[3][7];
+		String [] diaL = new String[7];
+		String [] turnoL = new String[3];
 		
 		for (int h = 0; h < funcsEnf.size(); h++) {
 			if (funcsEnf.get(h).getCpf().equals(cpf)){
 				horarios = funcsEnf.get(h).getTurnoDia();
-				System.out.println("########### HORARIOS MARCADOS ################");
-				System.out.println("##############################################");
+				System.out.println("########### HORARIOS MARCADOS COMO DISPONIVEIS################");
+				System.out.println("##############################################################");
+				diaL = TabelaDia();
+				turnoL = TabelaTurno();
 				for (int l = 0; l < 7; l++) {
-					System.out.print( dia[l] + "|");
+					System.out.print( diaL[l] + "|");
 				}
 				System.out.println(); 
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 7; j++) {
-						System.out.print(horarios[i][j]+ "|");
+						if (horarios[i][j] == 's'){
+						System.out.print("|  Sim  |");
+						}
+						if (horarios[i][j] == 'n'){
+							System.out.print("|  Nao  |");
+						}
+						if (horarios[i][j] == ' '){
+							System.out.print("|   |");
+						}
 					}
-					System.out.println( turno[i]);
+					System.out.println( turnoL[i]);
 				}
 		  }
 	   }	
