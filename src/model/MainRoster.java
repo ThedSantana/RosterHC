@@ -2,6 +2,7 @@ package model;
 
 import java.util.Scanner;
 import controller.FuncionarioBusiness;
+import controller.FuncionarioEnfermagemBusiness;
 
 public class MainRoster {
 
@@ -11,6 +12,8 @@ public class MainRoster {
 //SERA SUBSTITUIDO PELA INTERFACE
 public static void main(String[] args) {
 	// TODO Auto-generated method stub
+	FuncionarioBusiness fb = new FuncionarioBusiness();
+	FuncionarioEnfermagemBusiness feb = new FuncionarioEnfermagemBusiness();
 	
 	char opcao;
 	Scanner scanner = new Scanner(System.in);
@@ -34,9 +37,14 @@ public static void main(String[] args) {
 			
 			switch(op){
 			case ('4'):
-							
+				System.out.println(" Informe o cpf:");
+				String cpfM =  scanner.nextLine();
+				feb.MarcaHorario(cpfM);				
 				break;
 			case ('5'):
+				System.out.println(" Informe o cpf:");
+				String cpfL =  scanner.nextLine();
+				feb.ListaHorario(cpfL);
 				break;
 			case ('6'):
 				break;
@@ -48,8 +56,6 @@ public static void main(String[] args) {
 		
 		if (opcao == 'a'){
 			do{
-				FuncionarioBusiness fb = new FuncionarioBusiness();
-				
 				System.out.println(" 0 - Logar");
 				System.out.println(" 1 - Adicionar funcionario");
 				System.out.println(" 2 - Remover funcionario"); //
@@ -66,7 +72,6 @@ public static void main(String[] args) {
 				switch(op){
 				case ('1'):
 					scanner = new Scanner(System.in);
-					fb = new FuncionarioBusiness();
 					System.out.println("Informe: nome, sexo (M ou F), cpf, cep, email, celular, funcao");
 					 String nome = scanner.nextLine();
 					 char sexo = scanner.next().charAt(0);
@@ -104,7 +109,6 @@ public static void main(String[] args) {
 					}
 					break;
 				case ('4'):
-					fb = new FuncionarioBusiness();
 					fb.Lista();
 					break;
 				}
