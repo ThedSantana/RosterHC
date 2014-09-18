@@ -168,10 +168,13 @@ String [] turno = new String[3];
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 7; j++) {
 						if (horarios[i][j] == 's'){
-						System.out.print(" Sim |");
+						System.out.print("|  Sim  |");
 						}
 						if (horarios[i][j] == 'n'){
-							System.out.print(" Nao |");
+							System.out.print("|  Nao  |");
+						}
+						if (horarios[i][j] == ' '){
+							System.out.print("|   |");
 						}
 					}
 					System.out.println( turnoL[i]);
