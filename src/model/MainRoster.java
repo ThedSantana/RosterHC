@@ -25,6 +25,7 @@ public static void main(String[] args) {
 		
 		if (opcao == 'e'){
 		do{
+			scanner = new Scanner(System.in);
 			System.out.println(" 1 - Adicionar perfil");
 			System.out.println(" 2 - Remover perfil");
 			System.out.println(" 3 - Logar perfil");//nao implementar agora
@@ -37,11 +38,13 @@ public static void main(String[] args) {
 			
 			switch(op){
 			case ('4'):
+				scanner = new Scanner(System.in);
 				System.out.println(" Informe o cpf:");
 				String cpfM =  scanner.nextLine();
 				feb.MarcaHorario(cpfM);				
 				break;
 			case ('5'):
+				scanner = new Scanner(System.in);
 				System.out.println(" Informe o cpf:");
 				String cpfL =  scanner.nextLine();
 				feb.ListaHorario(cpfL);
@@ -56,6 +59,7 @@ public static void main(String[] args) {
 		
 		if (opcao == 'a'){
 			do{
+				scanner = new Scanner(System.in);
 				System.out.println(" 0 - Logar");
 				System.out.println(" 1 - Adicionar funcionario");
 				System.out.println(" 2 - Remover funcionario"); //
