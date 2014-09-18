@@ -11,8 +11,7 @@ public class FuncionarioEnfermagem extends Funcionario{
 			String endereco, String cep, String email, String telefone, 
 			String celular, String funcao, char[][] turnoDia) {
 		// TODO Auto-generated constructor stub
-		super(codigo, nome, sexo, cpf, endereco, cep, email, telefone, 
-				celular, funcao);
+		super(codigo, nome, sexo, cpf, cep, email, celular, funcao);
 		this.turnoDia = turnoDia;
 	}
 		

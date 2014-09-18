@@ -1,12 +1,14 @@
 package model;
 
 import java.util.Scanner;
+import controller.FuncionarioBusiness;
 
 public class MainRoster {
 
 	/**
 	 * @param args
 	 */
+//SERA SUBSTITUIDO PELA INTERFACE
 public static void main(String[] args) {
 	// TODO Auto-generated method stub
 	
@@ -45,9 +47,11 @@ public static void main(String[] args) {
 		
 		if (opcao == 'a'){
 			do{
+				FuncionarioBusiness fb = new FuncionarioBusiness();
+				
 				System.out.println(" 0 - Logar");
 				System.out.println(" 1 - Adicionar funcionario");
-				System.out.println(" 2 - Remover funcionario");
+				System.out.println(" 2 - Remover funcionario"); //
 				System.out.println(" 3 - Editar funcionario");
 				System.out.println(" 4 - Listar funcionario");
 				System.out.println(" 5 - Adicionar setor");
@@ -59,13 +63,48 @@ public static void main(String[] args) {
 				op = scanner.next().charAt(0);
 				
 				switch(op){
+				case ('1'):
+					scanner = new Scanner(System.in);
+					fb = new FuncionarioBusiness();
+					System.out.println("Informe: nome, sexo (M ou F), cpf, cep, email, celular, funcao");
+					 String nome = scanner.nextLine();
+					 char sexo = scanner.next().charAt(0);
+					 String cpf =  scanner.nextLine();
+					 String cep = scanner.nextLine();
+					 String email = scanner.nextLine();
+					 String celular = scanner.nextLine();
+					 String funcao = scanner.nextLine();
+					if (fb.Cadastra(nome, sexo, cpf, cep, email, celular, funcao)){
+						System.out.println("Funcionario inserido com sucesso!!");
+					}
+					break;
+				case ('2'):
+					scanner = new Scanner(System.in);
+					fb = new FuncionarioBusiness();
+					System.out.println("Informe o cpf: ");
+				 	String cpfR =  scanner.nextLine();
+				 	if (fb.Remove(cpfR)){
+				 		System.out.println("Funcionario removido com sucesso!!");
+				 	}
+					break;
+				case ('3'):
+					scanner = new Scanner(System.in);
+					fb = new FuncionarioBusiness();
+					System.out.println("Informe: nome, sexo (M ou F), cpf, cep, email, celular, funcao");
+					 String nomeE = scanner.nextLine();
+					 char sexoE = scanner.next().charAt(0);
+					 String cpfE =  scanner.nextLine();
+					 String cepE = scanner.nextLine();
+					 String emailE = scanner.nextLine();
+					 String celularE = scanner.nextLine();
+					 String funcaoE = scanner.nextLine();
+					if (fb.Edita( nomeE, sexoE, cpfE, cepE, emailE, celularE, funcaoE)){
+						System.out.println("Funcionario editado com sucesso!!");
+					}
+					break;
 				case ('4'):
-					break;
-				case ('5'):
-					break;
-				case ('6'):
-					break;
-				case ('7'):
+					fb = new FuncionarioBusiness();
+					fb.Lista();
 					break;
 				}
 				}while (op != 's');

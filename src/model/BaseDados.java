@@ -36,22 +36,18 @@ public class BaseDados {
 		if(this.funcionarios.size() == 0 && this.empresas.size() == 0 && this.setores.size() == 0){
 			
 			//ADICIONA OS FUNCIONARIOS
-			this.funcionarios.add(new Funcionario(0, "Joao", 'M', "98734545", "Rua, Salvador Ba", "40400000", "joaoadm@gmail.com", "3445856", 
-					"99817744", "adm"));
+			this.funcionarios.add(new Funcionario(0, "Joao", 'M', "98734545", "40400000", "joaoadm@gmail.com", "99817744", "adm"));
 			
-			this.funcionarios.add(new Funcionario(1, "Maria", 'F', "98734509", "Rua, Salvador Ba", "40400000", "mariaresp@gmail.com", "34455687", 
-					"99877044", "responsavel"));
+			this.funcionarios.add(new Funcionario(1, "Maria", 'F', "98734509", "40400000", "mariaresp@gmail.com", "99877044", "responsavel"));
 			
-			for (int i = 2; i < 6; i++) {
-				this.funcionarios.add(new Funcionario(i, "funcionario" + i,'F',
-						"123456789" + i, "Rua, Salvador Ba", "40400000", "funcionario" + i + "@gmail.com",
-						"34556" + i, "8765321" + i,"tec enfermagem"));
+			for (int i = 2; i < 4; i++) {
+				this.funcionarios.add(new Funcionario(i, "funcionario" + i,'F',	"123456789" + i, "40400000", "funcionario" +
+						i + "@gmail.com", "8765321" + i,"tec enfermagem"));
 			}
 			
-			for (int i = 6; i < 10; i++) {
-				this.funcionarios.add(new Funcionario(i, "funcionario" + i,'M',
-						"123456789" + i, "Rua, Salvador Ba", "40400000", "funcionario" + i + "@gmail.com",
-						"34556" + i, "8765321" + i,"enfermeiro"));
+			for (int i = 4; i < 7; i++) {
+				this.funcionarios.add(new Funcionario(i, "funcionario" + i,'M', "123456789" + i, "40400000", "funcionario" + i +
+						"@gmail.com", "8765321" + i,"enfermeiro"));
 			}
 			
 			//ADICIONAR EMPRESA
