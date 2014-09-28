@@ -54,24 +54,24 @@ String [] turno = new String[3];
 		}
 		return delete;
 	}
-	//rever codigo, para o caso de nao editar todas info
-	public boolean Edita(String nome, Character sexo, String cpf, String cep, String email, 
-			String celular, String funcao, char[][] turnoDia){
-		boolean edite = false;
-		List<FuncionarioEnfermagem> funcsEnf = bd.getFuncionariosEnf();
-		
-		for (int i = 0; i < funcsEnf.size(); i++) {
-			if (funcsEnf.get(i).getCpf().equals(cpf)){
-				int codigo = funcsEnf.size();
-				FuncionarioEnfermagem funcE = new FuncionarioEnfermagem(codigo, nome, sexo, cpf, cep, email, celular, funcao,turnoDia);
-				if(funcE != null){
-					funcsEnf.set(i, funcE);
-					edite = true;
-				}
-			}
-		}
-		return edite;
-	}
+//	//rever codigo, para o caso de nao editar todas info
+//	public boolean Edita(String nome, Character sexo, String cpf, String cep, String email, 
+//			String celular, String funcao, char[][] turnoDia){
+//		boolean edite = false;
+//		List<FuncionarioEnfermagem> funcsEnf = bd.getFuncionariosEnf();
+//		
+//		for (int i = 0; i < funcsEnf.size(); i++) {
+//			if (funcsEnf.get(i).getCpf().equals(cpf)){
+//				int codigo = funcsEnf.size();
+//				FuncionarioEnfermagem funcE = new FuncionarioEnfermagem(codigo, nome, sexo, cpf, cep, email, celular, funcao,turnoDia);
+//				if(funcE != null){
+//					funcsEnf.set(i, funcE);
+//					edite = true;
+//				}
+//			}
+//		}
+//		return edite;
+//	}
 	
 	public void Lista (){
 		List<FuncionarioEnfermagem> funcsEnf = bd.getFuncionariosEnf();
