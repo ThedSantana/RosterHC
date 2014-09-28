@@ -3,7 +3,7 @@ package controller;
 import java.util.List;
 
 import model.BaseDados;
-import model.Funcionario;
+import model.Pessoa;
 
 public class FuncionarioBusiness {
 BaseDados bd = BaseDados.getInstancia();
@@ -16,9 +16,9 @@ BaseDados bd = BaseDados.getInstancia();
 			 String cep, String email, String celular, String funcao) {
 
 		boolean cadastro = false;
-		List<Funcionario> funcs = bd.getFuncionarios();
+		List<Pessoa> funcs = bd.getFuncionarios();
 		int codigo = funcs.size();
-		Funcionario func = new Funcionario(codigo, nome, sexo, cpf, cep, email, celular, funcao);
+		Pessoa func = new Pessoa(codigo, nome, sexo, cpf, cep, email, celular, funcao);
 		
 		if(func != null){
 			funcs.add(func);
@@ -29,7 +29,7 @@ BaseDados bd = BaseDados.getInstancia();
 	
 	public boolean Remove (String cpf){
 		boolean delete = false;
-		List<Funcionario> funcs = bd.getFuncionarios();
+		List<Pessoa> funcs = bd.getFuncionarios();
 		
 		for (int i = 0; i < funcs.size(); i++) {
 			if (funcs.get(i).getCpf().equals(cpf)){
@@ -44,12 +44,12 @@ BaseDados bd = BaseDados.getInstancia();
 	public boolean Edita(String nome, Character sexo, String cpf, String cep, String email, 
 			String celular, String funcao){
 		boolean edite = false;
-		List<Funcionario> funcs = bd.getFuncionarios();
+		List<Pessoa> funcs = bd.getFuncionarios();
 		
 		for (int i = 0; i < funcs.size(); i++) {
 			if (funcs.get(i).getCpf().equals(cpf)){
 				int codigo = funcs.size();
-				Funcionario funcE = new Funcionario(codigo, nome, sexo, cpf, cep, email, celular, funcao);
+				Pessoa funcE = new Pessoa(codigo, nome, sexo, cpf, cep, email, celular, funcao);
 				if(funcE != null){
 					funcs.set(i, funcE);
 					edite = true;
@@ -60,7 +60,7 @@ BaseDados bd = BaseDados.getInstancia();
 	}
 	
 	public void Lista (){
-		List<Funcionario> funcs = bd.getFuncionarios();
+		List<Pessoa> funcs = bd.getFuncionarios();
 				
 		for (int i = 0; i < funcs.size(); i++) {
 			 int codigo = funcs.get(i).getCodigo();

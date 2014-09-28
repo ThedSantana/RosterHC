@@ -14,6 +14,7 @@ public class Perfil {
 	public String email;
 	public String senha;
 	public String usuario;
+//	public String tipo;
 	
 	public Perfil(int codigo,boolean ativo, String email, String senha, String usuario) {
 		super();

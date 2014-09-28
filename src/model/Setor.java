@@ -1,5 +1,6 @@
 package model;
 
+
 public class Setor {
 	public int codigo;
 	public boolean ativo;
@@ -7,18 +8,19 @@ public class Setor {
 	public String andar;
 	public Empresa empresa;
 	//cada setor com 1 responsavel
-	public Funcionario funcionario;
+	public Responsavel responsavel;
+	
 
 	
 	public Setor(int codigo, boolean ativo, String descricao, String andar,
-			Empresa empresa, Funcionario funcionario) {
+			Empresa empresa, Responsavel responsavel) {
 		super();
 		this.codigo = codigo;
 		this.ativo = ativo;
 		this.descricao = descricao;
 		this.andar = andar;
 		this.empresa= empresa;
-		this.funcionario = funcionario;
+		this.responsavel = responsavel;
 	}
 	
 	
@@ -55,11 +57,11 @@ public class Setor {
 		this.empresa = empresa;
 	}
 
-	public Funcionario getFuncionario() {
-		return funcionario;
+	public Pessoa getResponsavel() {
+		return responsavel;
 	}
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
+	public void setResponsavel(Responsavel responsavel) {
+		this.responsavel = responsavel;
 	}
 
 }

@@ -1,6 +1,6 @@
 package model;
 
-public class Funcionario {
+public class Pessoa {
 	public int codigo;
 	public String nome;
 	public Character sexo; //F feminino M masculino
@@ -8,10 +8,9 @@ public class Funcionario {
 	public String cep;
 	public String email;
 	public String celular;
-	public String funcao;
-	
-	public Funcionario(int codigo, String nome, Character sexo, String cpf,	String cep, String email, 
-			String celular, String funcao) {
+		
+	public Pessoa(int codigo, String nome, Character sexo, String cpf,	String cep, String email, 
+			String celular) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
@@ -20,7 +19,6 @@ public class Funcionario {
 		this.cep = cep;
 		this.email = email;
 		this.celular = celular;
-		this.funcao = funcao;
 	}
 
 	public int getCodigo() {
@@ -78,15 +76,5 @@ public class Funcionario {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
-
-	public String getFuncao() {
-		return funcao;
-	}
-
-	public void setFuncao(String funcao) {
-		this.funcao = funcao;
-	}
-	
-		
 	
 }
