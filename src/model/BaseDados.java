@@ -4,7 +4,7 @@ import java.util.List;
 
 import model.Empresa;
 import model.Escala;
-import model.Funcionario;
+import model.Pessoa;
 import model.FuncionarioEnfermagem;
 import model.Perfil;
 import model.Setor;
@@ -13,7 +13,7 @@ import model.Setor;
 
 public class BaseDados {
 	private static BaseDados instancia;
-	private List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+	private List<Pessoa> funcionarios = new ArrayList<Pessoa>();
 	private List<FuncionarioEnfermagem> funcionariosEnf = new ArrayList<FuncionarioEnfermagem>(); 
 	private List<Empresa> empresas = new ArrayList<Empresa>();
 	private List<Perfil> perfis = new ArrayList<Perfil>();
@@ -38,9 +38,9 @@ public class BaseDados {
 		if(this.funcionarios.size() == 0 && this.empresas.size() == 0 && this.setores.size() == 0){
 			
 			//ADICIONA OS FUNCIONARIOS
-			this.funcionarios.add(new Funcionario(0, "Joao", 'M', "98734545", "40400000", "joaoadm@gmail.com", "99817744", "adm"));
+			this.funcionarios.add(new Pessoa(0, "Joao", 'M', "98734545", "40400000", "joaoadm@gmail.com", "99817744", "adm"));
 			
-			this.funcionarios.add(new Funcionario(1, "Maria", 'F', "98734509", "40400000", "mariaresp@gmail.com", "99877044", "responsavel"));
+			this.funcionarios.add(new Pessoa(1, "Maria", 'F', "98734509", "40400000", "mariaresp@gmail.com", "99877044", "responsavel"));
 			
 			char [][] aux = new char[3][7];
 			for (int i = 0; i < 3; i++) {
@@ -70,11 +70,11 @@ public class BaseDados {
 
 	}
 
-	public List<Funcionario> getFuncionarios() {
+	public List<Pessoa> getFuncionarios() {
 		return funcionarios;
 	}
 
-	public void setFuncionarios(List<Funcionario> funcionarios) {
+	public void setFuncionarios(List<Pessoa> funcionarios) {
 		this.funcionarios = funcionarios;
 	}
 
