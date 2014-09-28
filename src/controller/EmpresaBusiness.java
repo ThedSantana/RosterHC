@@ -27,5 +27,17 @@ BaseDados bd = BaseDados.getInstancia();
 		return cadastro;
 	}
 	
+	public boolean Remove (String descricao){
+		boolean delete = false;
+		List<Empresa> emps = bd.getEmpresas();
+		
+		for (int i = 0; i < emps.size(); i++) {
+			if (emps.get(i).getDescricao().equals(descricao)){
+				emps.remove(i);
+				delete = true;
+			}
+		}
+		return delete;
+	}
 
 }

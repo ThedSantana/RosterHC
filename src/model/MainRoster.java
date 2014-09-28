@@ -1,7 +1,7 @@
 package model;
 
 import java.util.Scanner;
-import controller.FuncionarioBusiness;
+import controller.ResponsavelBusiness;
 import controller.FuncionarioEnfermagemBusiness;
 
 public class MainRoster {
@@ -12,7 +12,7 @@ public class MainRoster {
 //SERA SUBSTITUIDO PELA INTERFACE
 public static void main(String[] args) {
 	// TODO Auto-generated method stub
-	FuncionarioBusiness fb = new FuncionarioBusiness();
+	ResponsavelBusiness fb = new ResponsavelBusiness();
 	FuncionarioEnfermagemBusiness feb = new FuncionarioEnfermagemBusiness();
 	
 	char opcao;
@@ -90,7 +90,7 @@ public static void main(String[] args) {
 					break;
 				case ('2'):
 					scanner = new Scanner(System.in);
-					fb = new FuncionarioBusiness();
+					fb = new ResponsavelBusiness();
 					System.out.println("Informe o cpf: ");
 				 	String cpfR =  scanner.nextLine();
 				 	if (fb.Remove(cpfR)){
@@ -99,7 +99,7 @@ public static void main(String[] args) {
 					break;
 				case ('3'):
 					scanner = new Scanner(System.in);
-					fb = new FuncionarioBusiness();
+					fb = new ResponsavelBusiness();
 					System.out.println("Informe: nome, sexo (M ou F), cpf, cep, email, celular, funcao");
 					 String nomeE = scanner.nextLine();
 					 char sexoE = scanner.next().charAt(0);
